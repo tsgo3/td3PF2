@@ -44,7 +44,7 @@ public class Commande {
      * cumule les lignes en fonction des produits
      */
     public Commande normaliser() {
-        Map<Produit, Integer> lignesCumulees = new HashMap<>();
+        /*Map<Produit, Integer> lignesCumulees = new HashMap<>();
         for (Paire<Produit, Integer> ligne : lignes) {
             Produit p = ligne.fst();
             int qte = ligne.snd();
@@ -58,7 +58,12 @@ public class Commande {
         for (Produit p : lignesCumulees.keySet()) {
             commandeNormalisee.ajouter(p, lignesCumulees.get(p));
         }
-        return commandeNormalisee;
+        return commandeNormalisee;*/
+
+
+        Commande c = new Commande();
+        regrouper(lignes).forEach((produit, nb) -> c.ajouter(produit, nb.stream().reduce(0, Integer::sum)));
+        return c;
     }
 
     public Double cout(Function<Paire<Produit, Integer>, Double> calculLigne) {
