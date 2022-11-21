@@ -1,4 +1,4 @@
-package td2;
+package td1.td2.src.main.java.td2;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package td2.universite;
+package td1.td2.src.main.java.td2.universite;
 
 public class Matiere {
     private String nom;
